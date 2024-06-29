@@ -1,15 +1,15 @@
 ---
-title: 'Hello'
-description: 'Welcome to my website!'
-pubDate: 'June 28 2024'
-heroImage: '/blog/hello.jpg'
+title: 'Hello World'
+description: 'Welcome to my website'
+pubDate: 'June 29 2024'
+heroImage: '/blog/hello-world.jpg'
 ---
 
 # Welcome to My New Website
 
-Hello, world. ✌️
+Hello, world. 👋
 
-This is the first blog entry of my new website.
+This is the first blog entry of my website.
 
 ## How Did I Make This Site?
 

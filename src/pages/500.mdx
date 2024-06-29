@@ -1,0 +1,23 @@
+import {getCollection} from 'astro:content';
+
+import BaseHead from '../components/BaseHead.astro';
+import Prose from '../components/Prose.astro';
+import {SITE_DESCRIPTION, formatTitle} from '../consts';
+
+<head>
+  <BaseHead title={formatTitle('500')} description={SITE_DESCRIPTION} />
+</head>
+
+<main>
+
+<section class="flex flex-col items-center">
+
+# 500
+
+Looks like we are having some issues on our end, please hold tight.
+
+<img src="/milo.png" alt="Greg" class="w-52" />
+
+</section>
+
+</main>
