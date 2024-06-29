@@ -1,5 +1,12 @@
+import {getCollection} from 'astro:content';
+
+import FormattedDate from '../components/FormattedDate.astro';
 import Prose from '../components/Prose.astro';
 import '../styles/global.css';
+
+export const posts = (await getCollection('blog')).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
 
 <main>
 <Prose>
@@ -13,6 +20,21 @@ Welcome to my website!
 ## Blog
 
 Some things I've written about.
+
+<section>
+  <ul>
+    {posts.map(post => (
+      <li>
+        <a href={`/blog/${post.slug}/`}>
+          <h4 class="title">{post.data.title}</h4>
+          <p class="date">
+            <FormattedDate date={post.data.pubDate} />
+          </p>
+        </a>
+      </li>
+    ))}
+  </ul>
+</section>
 
 ## Projects
 
