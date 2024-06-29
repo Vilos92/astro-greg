@@ -40,8 +40,10 @@ body {
   font-size: 20px;
   line-height: 1.7;
 
+  color: #000;
   background: #d1fae5;
   @media screen and (prefers-color-scheme: dark) {
+    color: #fff;
     background: #059669;
   }
 }
@@ -58,8 +60,12 @@ h4,
 h5,
 h6 {
   margin: 0 0 0.5rem 0;
-  color: rgb(var(--black));
   line-height: 1.2;
+
+  color: #000;
+  @media screen and (prefers-color-scheme: dark) {
+    color: #fff;
+  }
 }
 h1 {
   font-size: 3.052em;
@@ -156,10 +162,16 @@ hr {
   white-space: nowrap;
 }
 
-// unreset lists
-ul, ol {
-  padding-left: 1.5em;
-}
-li {
-  margin-bottom: 0.5em;
+a {
+  color: #000;
+  &:hover {
+    color: #000;
+  }
+
+  @media screen and (prefers-color-scheme: dark) {
+    color: #fff;
+    &:hover {
+      color: #fff;
+    }
+  }
 }
