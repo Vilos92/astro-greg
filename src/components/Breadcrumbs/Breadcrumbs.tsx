@@ -16,7 +16,7 @@ export default function Breadcrumbs(props: BreadcrumbsProps) {
 
   return (
     <nav className="mb-4">
-      {breadCrumbs.length > 0 ? <a href="/">Home</a> : <span>Home</span>}
+      {breadCrumbs.length > 0 ? <a href="/">Home</a> : <span className="italic">Home</span>}
       {breadCrumbs.map((crumb, index) => renderBreadCrumb(breadCrumbs, crumb, index))}
     </nav>
   );
