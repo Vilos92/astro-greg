@@ -16,7 +16,7 @@ import {SITE_DESCRIPTION, SITE_TITLE, formatTitle} from '../consts';
     <Prose>
       {props.heroImage && <img src={props.heroImage} alt={props.title} class="w-52" />}
       <div class="title">
-        <h1 style={{marginBottom: 0}}>{props.title}</h1>
+        <h1 className="mb-0">{props.title}</h1>
         <div class="date">
           <FormattedDate date={props.pubDate} />
           {props.updatedDate && (
