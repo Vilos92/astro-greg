@@ -1,0 +1,35 @@
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import FormattedDate from '../components/FormattedDate.astro';
+import Header from '../components/Header.astro';
+import Prose from '../components/Prose.astro';
+import {PAGE_TITLE, SITE_DESCRIPTION, formatTitle} from '../consts';
+
+<head>
+  <BaseHead title={formatTitle(PAGE_TITLE)} description={SITE_DESCRIPTION} />
+</head>
+
+<main>
+  [Home](/) > [Blog](/blog) > _{props.title}_
+
+  <article>
+    <Prose>
+      {props.heroImage && <img src={props.heroImage} alt={props.title} class="w-52" />}
+      <div class="title">
+        <h1 style={{marginBottom: 0}}>{props.title}</h1>
+        <div class="date">
+          <FormattedDate date={props.pubDate} />
+          {props.updatedDate && (
+            <div class="last-updated-on">
+              Last updated on <FormattedDate date={props.updatedDate} />
+            </div>
+          )}
+        </div>
+        <hr />
+      </div>
+      {props.children}
+    </Prose>
+  </article>
+</main>
+
+<Footer />

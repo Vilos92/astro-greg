@@ -3,6 +3,7 @@ import {getCollection} from 'astro:content';
 import BaseHead from '../../components/BaseHead.astro';
 import FormattedDate from '../../components/FormattedDate.astro';
 import {SITE_DESCRIPTION, formatTitle} from '../../consts';
+import Footer from '../../components/Footer.astro';
 
 import '../../styles/global.css';
 
@@ -38,3 +39,5 @@ export const posts = (await getCollection('blog')).sort(
 </section>
 
 </main>
+
+<Footer />

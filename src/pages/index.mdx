@@ -1,10 +1,17 @@
+import {getCollection} from 'astro:content';
+
 import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
 import Prose from '../components/Prose.astro';
 import {SITE_DESCRIPTION, SITE_TITLE} from '../consts';
 
 <head>
   <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 </head>
+
+export const post = (await getCollection('blog')).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+)[0];
 
 <main>
 
@@ -14,13 +21,15 @@ import {SITE_DESCRIPTION, SITE_TITLE} from '../consts';
 
 # greglinscheid.com
 
-<img src="/greg.jpg" alt="Greg" width={180} height={225} />
+<img src="/greg.jpg" alt="Greg" class="w-52" />
 
 Welcome to my website!
 
 ## Blog
 
 If I write anything, you can find it in [my blog](/blog)
+
+This is the latest entry: <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
 
 ## Projects
 
@@ -60,3 +69,5 @@ To Milo and Cyn.
 
 </Prose>
 </main>
+
+<Footer />
