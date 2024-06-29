@@ -4,14 +4,12 @@ import FormattedDate from '../components/FormattedDate.astro';
 import Prose from '../components/Prose.astro';
 import {SITE_DESCRIPTION, SITE_TITLE, formatTitle} from '../consts';
 
-export const PAGE_TITLE = props.title;
-
 <head>
-  <BaseHead title={formatTitle(PAGE_TITLE)} description={SITE_DESCRIPTION} />
+  <BaseHead title={formatTitle(props.title)} description={SITE_DESCRIPTION} />
 </head>
 
 <main>
-  [Home](/) > [Blog](/blog) > _{PAGE_TITLE}_
+  [Home](/) > [Blog](/blog) > _{props.title}_
 
   <article>
     <Prose>
