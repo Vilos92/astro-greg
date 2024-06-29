@@ -164,14 +164,27 @@ hr {
 
 a {
   color: #000;
+
+  text-decoration: underline;
+
+  img {
+    border-left: 3px solid transparent;
+  }
+
   &:hover {
-    color: #000;
+    color: #84cc16;
+
+    * {
+      color: #84cc16;
+    }
+
+    img {
+      box-sizing: border-box;
+      border-left: 3px solid #84cc16;
+    }
   }
 
   @media screen and (prefers-color-scheme: dark) {
     color: #fff;
-    &:hover {
-      color: #fff;
-    }
   }
 }
