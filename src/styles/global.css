@@ -34,13 +34,16 @@ body {
   margin: 0;
   padding: 0;
   text-align: left;
-  background: #38c99c;
-  background-size: 100% 600px;
   word-wrap: break-word;
   overflow-wrap: break-word;
   color: rgb(var(--gray-dark));
   font-size: 20px;
   line-height: 1.7;
+
+  background: #d1fae5;
+  @media screen and (prefers-color-scheme: dark) {
+    background: #059669;
+  }
 }
 main {
   width: 720px;
