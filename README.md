@@ -1,5 +1,11 @@
 # greglinscheid.com
 
+<p align="center">
+  <a href="https://github.com/Vilos92/typerion">
+    <img src="https://github.com/Vilos92/astro-greg/raw/main/public/blog/hello-world.jpg" alt="milo" height="256" />
+  </a>
+</p>
+
 ## 🧞 Commands
 
 All commands are run from the root of the project, from a terminal:
