@@ -1,4 +1,5 @@
 import BaseHead from '../components/BaseHead.astro';
+import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs.astro';
 import Footer from '../components/Footer.astro';
 import FormattedDate from '../components/FormattedDate.astro';
 import Prose from '../components/Prose.astro';
@@ -9,7 +10,7 @@ import {SITE_DESCRIPTION, SITE_TITLE, formatTitle} from '../consts';
 </head>
 
 <main>
-  [Home](/) > [Blog](/blog) > _{props.title}_
+  <Breadcrumbs />
 
   <article>
     <Prose>

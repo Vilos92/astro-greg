@@ -1,6 +1,7 @@
 import {getCollection} from 'astro:content';
 
 import BaseHead from '../components/BaseHead.astro';
+import Breadcrumbs from '../components/Breadcrumbs/Breadcrumbs.astro';
 import Footer from '../components/Footer.astro';
 import Prose from '../components/Prose.astro';
 import {SITE_DESCRIPTION, SITE_TITLE} from '../consts';
@@ -15,7 +16,7 @@ export const post = (await getCollection('blog')).sort(
 
 <main>
 
-[Home](/)
+<Breadcrumbs />
 
 <Prose>
 

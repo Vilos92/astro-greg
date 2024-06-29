@@ -1,0 +1,7 @@
+---
+import BreadcrumbsRenderer from './Breadcrumbs.tsx';
+
+const currentPath = Astro.url.pathname;
+---
+
+<BreadcrumbsRenderer currentPath={currentPath} />
