@@ -1,3 +1,4 @@
+import {Image} from 'astro:assets';
 import {getCollection} from 'astro:content';
 
 import BaseHead from '../components/BaseHead.astro';
@@ -22,7 +23,7 @@ export const post = (await getCollection('blog')).sort(
 
 # greglinscheid.com
 
-<img src="/greg-portrait.jpg" alt="Greg" class="w-52" />
+<Image src="/greg-portrait.jpg" alt="Greg" width={208} height={260} />
 
 Welcome to my website!
 
