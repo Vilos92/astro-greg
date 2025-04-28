@@ -1,0 +1,15 @@
+name: Cache and Install bun
+runs:
+  using: composite
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+
+    - name: Install bun
+      uses: oven-sh/setup-bun@v1
+      with:
+        bun-version-file: '.bun-version'
+
+    - name: Install Dependencies
+      shell: bash
+      run: bun install

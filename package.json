@@ -1,34 +1,45 @@
 {
   "name": "astro-greg",
-  "type": "module",
   "version": "0.0.1",
+  "type": "module",
   "scripts": {
+    "astro": "astro",
+    "build": "astro build",
     "dev": "astro dev",
-    "start": "astro dev",
-    "build": "astro check && astro build",
+    "lint": "eslint . --ext .js,.ts,.jsx,.tsx",
+    "prepare": "husky install",
+    "prettier:check": "prettier --check --ignore-unknown '**/*'",
+    "prettier:fix": "prettier --write --ignore-unknown '**/*'",
     "preview": "astro preview",
-    "astro": "astro"
+    "sort-package-json:check": "sort-package-json --check",
+    "sort-package-json:fix": "sort-package-json",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@astrojs/check": "^0.7.0",
-    "@astrojs/mdx": "^3.1.2",
-    "@astrojs/react": "^3.6.0",
-    "@astrojs/rss": "^4.0.7",
-    "@astrojs/sitemap": "^3.1.6",
-    "@astrojs/tailwind": "^5.1.0",
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/mdx": "^4.2.5",
+    "@astrojs/react": "^4.2.5",
+    "@astrojs/rss": "4.0.11",
+    "@astrojs/sitemap": "3.3.1",
+    "@astrojs/tailwind": "^6.0.2",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "astro": "^4.11.3",
+    "astro": "^5.7.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "tailwindcss": "^3.4.4",
-    "typescript": "^5.5.2"
+    "typescript": "^5.8.3"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.13",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
+    "@typescript-eslint/eslint-plugin": "^8.31.0",
+    "eslint": "^9.25.1",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.5.1",
     "prettier": "3.3.2",
     "prettier-plugin-astro": "^0.14.0",
-    "prettier-plugin-tailwindcss": "^0.6.5"
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "sort-package-json": "^3.0.0"
   }
 }

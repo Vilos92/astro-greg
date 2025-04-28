@@ -1,0 +1,6 @@
+bun lint-staged
+
+if git diff --cached --name-only | grep -q "package.json"; then
+    pnpm run sort-package-json:fix
+    git add package.json
+fi
