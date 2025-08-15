@@ -24,20 +24,22 @@ export const posts = (await getCollection('blog')).sort(
 
 <section>
   <ul>
-    {posts.map(post => (
-      <li>
-        <a href={`/blog/${post.slug}/`} class="flex flex-row gap-4">
-            <img src="/blog/hello-world.jpg" alt="Milo" class="w-52" />
+    {posts
+      .sort((a, b) => new Date(b.data.pubDate).getTime() - new Date(a.data.pubDate).getTime())
+      .map(post => (
+        <li>
+          <a href={`/blog/${post.slug}/`} class="flex flex-row gap-4">
+              <img src={post.data.heroImage} alt="Milo" class="w-52" />
 
-          <div>
-            <h4 class="title">{post.data.title}</h4>
-            <p class="date">
-              <FormattedDate date={post.data.pubDate} />
-            </p>
-          </div>
-        </a>
-      </li>
-    ))}
+            <div>
+              <h4 class="title">{post.data.title}</h4>
+              <p class="date">
+                <FormattedDate date={post.data.pubDate} />
+              </p>
+            </div>
+          </a>
+        </li>
+      ))}
 
   </ul>
 </section>

@@ -12,7 +12,7 @@ import {SITE_DESCRIPTION, SITE_TITLE} from '../consts';
 </head>
 
 export const post = (await getCollection('blog')).sort(
-  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
 )[0];
 
 <main>
