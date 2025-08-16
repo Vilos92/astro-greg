@@ -163,7 +163,7 @@ You must provide a configuration file to define users, mount shared folders (vol
     r: friend
 
 # Friends are allowed to access my Mac Vault.
-# Admin can already access this due to root access.
+# Admin must be added as this is not included in the root access.
 [/Mac Vault]
   /Volumes/Mac Vault
   accs:
