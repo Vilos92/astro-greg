@@ -18,7 +18,7 @@ However, I saw a few ways to improve this setup:
 
 This led me to containerize the entire setup using Docker. Below is a complete guide on how to do it yourself.
 
-**Note:** You can find the up-to-date code for this guide in this repository: [vilos92/copyparty-tunnel](https://github.com/Vilos92/copyparty-tunnel). You can also skip building the image yourself and pull the pre-built version from Docker Hub: [greglinscheid/copyparty-tunnel](https://hub.docker.com/r/greglinscheid/copyparty-tunnel).
+**Note:** You can find the up-to-date code for this guide in this repository: [vilos92/copyparty-tunnel](https://github.com/Vilos92/copyparty-tunnel). You can also skip building the image yourself and pull the pre-built version from the GitHub Container Registry (GHCR): **[ghcr.io/vilos92/copyparty-tunnel](https://github.com/Vilos92/copyparty-tunnel/pkgs/container/copyparty-tunnel)**.
 
 ---
 
@@ -106,7 +106,7 @@ cloudflared tunnel run --token "$COPYPARTY_CLOUDFLARED_TOKEN"
 With the `Dockerfile` and `start.sh` script in the same directory, run the following command to build your Docker image:
 
 ```bash
-docker build -t greglinscheid/copyparty-tunnel:latest .
+docker build -t ghcr.io/vilos92/copyparty-tunnel:latest .
 ```
 
 ---
@@ -212,7 +212,7 @@ docker run -d \
   # Pass in the Cloudflare token (required)
   -e COPYPARTY_CLOUDFLARED_TOKEN="$COPYPARTY_CLOUDFLARED_TOKEN" \
   --restart unless-stopped \
-  greglinscheid/copyparty-tunnel:latest
+  ghcr.io/vilos92/copyparty-tunnel:latest
 ```
 
 Let's break down the `docker run` command:
@@ -221,9 +221,4 @@ Let's break down the `docker run` command:
 - `-u $(id -u)`: Runs the container as your current user to avoid file permission issues.
 - `-v "$(pwd)/copyparty.conf:/app/copyparty.conf:ro"`: Mounts your local configuration file into the container as **read-only**. This is **required**.
 - `-v "/path/on/your/computer/..."`: Mounts your local directories into the container so `copyparty` can serve them. **Change these paths to match your own.**
-- `-e COPYPARTY_CLOUDFLARED_TOKEN=...`: Passes your Cloudflare Tunnel token to the container as an environment variable. This is **required**.
-- `--restart unless-stopped`: Ensures the container restarts automatically if it crashes or the system reboots.
-
-That's it! Your `copyparty` instance is now running and securely exposed to the internet through your Cloudflare Tunnel. Enjoy your new portable and secure file-sharing setup!
-
-![greg's copyparty](/blog/copyparty-2025-08-15-4.36.53 PM.png)
+- `-e COPYPARTY_CLOUDFLARED_TOKEN=
