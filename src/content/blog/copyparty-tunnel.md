@@ -221,4 +221,4 @@ Let's break down the `docker run` command:
 - `-u $(id -u)`: Runs the container as your current user to avoid file permission issues.
 - `-v "$(pwd)/copyparty.conf:/app/copyparty.conf:ro"`: Mounts your local configuration file into the container as **read-only**. This is **required**.
 - `-v "/path/on/your/computer/..."`: Mounts your local directories into the container so `copyparty` can serve them. **Change these paths to match your own.**
-- `-e COPYPARTY_CLOUDFLARED_TOKEN=
+- `-e COPYPARTY_CLOUDFLARED_TOKEN=`
