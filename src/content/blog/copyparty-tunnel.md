@@ -221,4 +221,9 @@ Let's break down the `docker run` command:
 - `-u $(id -u)`: Runs the container as your current user to avoid file permission issues.
 - `-v "$(pwd)/copyparty.conf:/app/copyparty.conf:ro"`: Mounts your local configuration file into the container as **read-only**. This is **required**.
 - `-v "/path/on/your/computer/..."`: Mounts your local directories into the container so `copyparty` can serve them. **Change these paths to match your own.**
-- `-e COPYPARTY_CLOUDFLARED_TOKEN=`
+- `-e COPYPARTY_CLOUDFLARED_TOKEN=...`: Passes your Cloudflare Tunnel token to the container as an environment variable. This is **required**.
+- `--restart unless-stopped`: Ensures the container restarts automatically if it crashes or the system reboots.
+
+That's it! Your `copyparty` instance is now running and securely exposed to the internet through your Cloudflare Tunnel. Enjoy your new portable and secure file-sharing setup!
+
+![greg's copyparty](/blog/copyparty-2025-08-15-4.36.53 PM.png)`
