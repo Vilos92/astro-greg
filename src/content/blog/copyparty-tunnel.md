@@ -226,4 +226,4 @@ Let's break down the `docker run` command:
 
 That's it! Your `copyparty` instance is now running and securely exposed to the internet through your Cloudflare Tunnel. Enjoy your new portable and secure file-sharing setup!
 
-![greg's copyparty](/blog/copyparty-2025-08-15-4.36.53 PM.png)`
+![greg's copyparty](/blog/copyparty-2025-08-15-4.36.53 PM.png)
